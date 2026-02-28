@@ -5,8 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/Nova-Store',
-  assetPrefix: '/Nova-Store',
 };
 
 export default nextConfig;
