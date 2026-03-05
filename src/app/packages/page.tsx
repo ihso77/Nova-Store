@@ -72,7 +72,7 @@ export default function PackagesPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-7xl md:text-9xl font-[1000] text-white tracking-tighter italic leading-tight"
+                        className="text-5xl sm:text-7xl md:text-9xl font-[1000] text-white tracking-tighter italic leading-tight"
                     >
                         {lang === "en" ? "CHOOSE" : "اختر"} <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-transparent italic">{lang === "en" ? "YOUR LEGACY." : "إرثك."}</span>

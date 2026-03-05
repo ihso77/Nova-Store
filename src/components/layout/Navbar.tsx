@@ -111,37 +111,61 @@ export default function Navbar() {
 
             {/* Mobile Nav Menu */}
             {mobileMenuOpen && (
-                <div className="md:hidden glass-panel border-0 border-t border-white/5 absolute top-[calc(100%+12px)] left-0 w-full rounded-2xl animate-in slide-in-from-top-2 duration-300">
-                    <div className="px-6 py-8 space-y-4">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className={`block px-4 py-3 rounded-xl text-xs font-black uppercase tracking-widest ${pathname === link.href ? "text-white bg-white/5" : "text-white/40"
-                                    }`}
+                <div className="md:hidden glass-panel border border-white/10 absolute top-[calc(100%+12px)] left-0 w-full rounded-3xl overflow-hidden animate-in fade-in slide-in-from-top-4 duration-500 z-50 shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+                    <div className="px-6 py-10 space-y-6 bg-gradient-to-b from-white/[0.03] to-transparent">
+                        <div className="space-y-2">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className={`flex items-center justify-between px-6 py-5 rounded-2xl text-[13px] font-black uppercase tracking-[0.2em] transition-all ${pathname === link.href ? "text-white bg-white/10 shadow-[inner_0_1px_1px_rgba(255,255,255,0.1)]" : "text-white/40 hover:text-white"
+                                        }`}
+                                >
+                                    {link.name}
+                                    {pathname === link.href && <div className="w-1.5 h-1.5 rounded-full bg-nova-purple animate-pulse" />}
+                                </Link>
+                            ))}
+                        </div>
+
+                        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-8" />
+
+                        <div className="space-y-4 px-2">
+                            <button
+                                onClick={toggleLang}
+                                className="w-full flex items-center justify-between px-6 py-4 rounded-xl border border-white/5 text-[11px] font-black text-white/50 uppercase tracking-widest hover:bg-white/5 transition-all"
                             >
-                                {link.name}
-                            </Link>
-                        ))}
-                        <div className="h-px bg-white/5 my-6" />
-                        <div className="space-y-4">
+                                <span>{lang === "en" ? "Translate to Arabic" : "ترجمة للإنجليزية"}</span>
+                                <Globe className="w-4 h-4 text-nova-purple" />
+                            </button>
+
                             {user ? (
-                                <>
+                                <div className="space-y-4 pt-4">
                                     <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)} className="block">
-                                        <Button className="w-full bg-white text-black text-[10px] font-black tracking-widest">{t("nav.dashboard") || "Dashboard"}</Button>
+                                        <Button className="h-16 w-full bg-white text-black text-[11px] font-black tracking-[0.2em] uppercase rounded-2xl">
+                                            {t("nav.dashboard") || "Command Center"}
+                                        </Button>
                                     </Link>
-                                    <Button variant="ghost" className="w-full text-red-400 text-[10px] font-black tracking-widest" onClick={() => { signOut(); setMobileMenuOpen(false); }}>
-                                        {t("nav.logout") || "Logout"}
+                                    <Button
+                                        variant="ghost"
+                                        className="w-full text-red-400/60 hover:text-red-400 text-[11px] font-black tracking-[0.2em] uppercase"
+                                        onClick={() => { signOut(); setMobileMenuOpen(false); }}
+                                    >
+                                        <LogOut className="w-4 h-4 mr-2" />
+                                        {t("nav.logout") || "Terminate Session"}
                                     </Button>
-                                </>
+                                </div>
                             ) : (
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 gap-4 pt-4">
                                     <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
-                                        <div className="w-full h-12 flex items-center justify-center rounded-xl border border-white/5 text-white text-[10px] font-black tracking-widest">{t("nav.login") || "Login"}</div>
+                                        <div className="w-full h-16 flex items-center justify-center rounded-2xl border border-white/10 text-white/60 text-[11px] font-black tracking-[0.2em] uppercase hover:bg-white/5 transition-all">
+                                            {t("nav.login") || "Authentication"}
+                                        </div>
                                     </Link>
                                     <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
-                                        <Button className="w-full bg-white text-black text-[10px] font-black tracking-widest">{t("nav.register") || "Join"}</Button>
+                                        <Button className="h-16 w-full bg-white text-black text-[11px] font-black tracking-[0.2em] uppercase rounded-2xl shadow-xl shadow-white/10">
+                                            {t("nav.register") || "Initiate Asset"}
+                                        </Button>
                                     </Link>
                                 </div>
                             )}

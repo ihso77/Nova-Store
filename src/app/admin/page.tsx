@@ -107,7 +107,7 @@ export default function AdminPage() {
                         </motion.div>
                         <div>
                             <div className="flex items-center gap-4 mb-2">
-                                <h1 className="text-5xl md:text-6xl font-[1000] text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 via-yellow-400 to-yellow-600 tracking-tighter italic uppercase">
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl font-[1000] text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 via-yellow-400 to-yellow-600 tracking-tighter italic uppercase">
                                     {lang === "en" ? "OVERWATCH" : "نظام المراقبة"}
                                 </h1>
                                 <div className="px-3 py-1 rounded-lg text-[10px] font-black tracking-[0.3em] uppercase bg-yellow-500/20 text-yellow-100 border border-yellow-500/50 flex items-center gap-2 shadow-[0_0_20px_rgba(234,179,8,0.3)]">

@@ -63,7 +63,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="text-[10rem] md:text-[14rem] lg:text-[18rem] font-[1000] text-white tracking-tighter leading-[0.75] italic select-none"
+              className="text-[4.5rem] sm:text-[8rem] md:text-[14rem] lg:text-[18rem] font-[1000] text-white tracking-tighter leading-[0.75] italic select-none"
             >
               NOVA<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-transparent">STORE.</span>
@@ -87,14 +87,14 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6"
           >
-            <Link href="/packages" className="group">
-              <Button size="lg" className="h-20 px-16 bg-white text-black text-[13px] font-black uppercase tracking-[0.3em] rounded-2xl hover:scale-105 transition-all shadow-[0_20px_60px_rgba(255,255,255,0.1)] flex items-center gap-4">
+            <Link href="/packages" className="group w-full sm:w-auto">
+              <Button size="lg" className="h-20 w-full sm:w-auto px-16 bg-white text-black text-[13px] font-black uppercase tracking-[0.3em] rounded-2xl hover:scale-105 transition-all shadow-[0_20px_60px_rgba(255,255,255,0.1)] flex items-center justify-center gap-4">
                 {t("button.getStarted")}
                 <Crown className="w-5 h-5 text-nova-purple group-hover:rotate-12 transition-transform" />
               </Button>
             </Link>
-            <Link href="/login">
-              <div className="px-12 py-6 rounded-2xl border border-white/5 text-[12px] font-black uppercase tracking-[0.3em] text-white/60 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all cursor-pointer bg-white/[0.01] backdrop-blur-3xl flex items-center gap-3">
+            <Link href="/login" className="w-full sm:w-auto">
+              <div className="px-12 py-6 w-full sm:w-auto rounded-2xl border border-white/5 text-[12px] font-black uppercase tracking-[0.3em] text-white/60 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all cursor-pointer bg-white/[0.01] backdrop-blur-3xl flex items-center justify-center gap-3">
                 <PlayCircle className="w-5 h-5" />
                 {lang === "en" ? "Enter Portal" : "دخول البوابة"}
               </div>

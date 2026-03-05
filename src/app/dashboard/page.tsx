@@ -137,7 +137,7 @@ export default function DashboardPage() {
                             <Sparkles className="w-4 h-4 text-nova-cyan animate-pulse" />
                             <span className="text-[10px] font-black uppercase tracking-[0.5em] text-nova-cyan italic">Operative_Command</span>
                         </div>
-                        <h1 className="text-6xl md:text-8xl font-[1000] text-white tracking-tighter italic uppercase leading-none">
+                        <h1 className="text-5xl sm:text-6xl md:text-8xl font-[1000] text-white tracking-tighter italic uppercase leading-none">
                             {lang === "en" ? "Dashboard" : "لوحة التحكم"}
                         </h1>
                     </motion.div>
